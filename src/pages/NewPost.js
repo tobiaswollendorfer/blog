@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import Bloglist from "../components/Bloglist";
 
+//route: /newPost
 function NewPost() {
   const [blogPosts, setBlogPosts] = useState([]);
 
