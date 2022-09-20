@@ -30,7 +30,6 @@ function NewPost() {
     });
   }
 
-  console.log(blogPosts);
   return (
     <div>
       <Input onAddBlogPost={addBlog} />
