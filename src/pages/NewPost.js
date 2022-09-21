@@ -5,12 +5,19 @@ import Bloglist from "../components/Bloglist";
 //route: /newPost
 function NewPost() {
   const [blogPosts, setBlogPosts] = useState([]);
-
   function deletepost(ID) {
     setBlogPosts((prevBlogPosts) => {
       const updatedBlogPosts = prevBlogPosts.filter((blog) => blog.id !== ID);
       return updatedBlogPosts;
     });
+  }
+  function editPost(ID, enterdText) {
+    console.log(ID);
+    for(const e in blogPosts){
+      if(blogPosts[e].id === ID)
+        console.log(blogPosts[e]);
+        blogPosts[e].post = enterdText;
+    }
   }
   //need to have value and label for checkbox??
   function addBlog(value, label, id, username, title, date, post) {
@@ -26,6 +33,7 @@ function NewPost() {
         title: title,
         post: post,
       });
+
       return updatedBlogPosts;
     });
   }
@@ -33,7 +41,11 @@ function NewPost() {
   return (
     <div>
       <Input onAddBlogPost={addBlog} />
-      <Bloglist bloglist={blogPosts} deletepost={deletepost} />
+      <Bloglist
+        bloglist={blogPosts}
+        deletepost={deletepost}
+        editPost={editPost}
+      />
     </div>
   );
 }

@@ -33,6 +33,8 @@ const Bloglist = (props) => {
   function handleSelect(data) {
     setSelectedOptions(data);
   }
+  
+ 
 
   if (props.bloglist.length === 0) {
     return <div>No Blogposts yet, create ?</div>;
@@ -46,6 +48,7 @@ const Bloglist = (props) => {
             <IndividualBlog
               blogitem={blog}
               deletepost={props.deletepost}
+              editPost={props.editPost}
               key={i}
             ></IndividualBlog>
           ))}
@@ -59,6 +62,7 @@ const Bloglist = (props) => {
             <IndividualBlog
               blogitem={blog}
               deletepost={props.deletepost}
+              editPost={props.editPost}
               key={i}
             ></IndividualBlog>
           ))}
